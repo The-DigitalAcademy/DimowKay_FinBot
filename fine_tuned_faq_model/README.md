@@ -4,280 +4,166 @@ tags:
 - sentence-similarity
 - feature-extraction
 - generated_from_trainer
-- dataset_size:5164
+- dataset_size:4197
 - loss:CosineSimilarityLoss
 base_model: sentence-transformers/all-MiniLM-L6-v2
 widget:
-- source_sentence: What are the benefits of investing to IRARoth IRA, 401k in comparison
-    to investing in long term CDs?
+- source_sentence: What are some tips for getting the upper hand in car price negotiations?
   sentences:
-  - BestInvest is a UK site looking at that URL, base on the "co.uk" ending. Yahoo!
-    Finance that you use is a USbased site unless you add something else to the URL.
-    UK  Ireland Yahoo! Finance is different from where you were as there is something
-    to be said for where are you looking. If I was looking for a quarter dollar there
-    are Canadian and American coins that meet this so there is something to be said
-    for a higher level of categorization being done. "EUN.L" would likely denote the
-    "London" exchange as tickers are exchangespecific you do realize, right?
-  - My grandma left a 50K inheritance You dont make clear where in the inheritance
-    process you are. I actually know of one case where the executor a family member,
-    not a professional distributed the inheritance before paying the estate taxes.
-    Long story short, the heirs had to pay back part of the inheritance. So the first
-    thing that I would do is verify that the estate is closed and all the taxes paid.
-    If the executor is a professional, just call and ask. If a family member, you
-    may want to approach it more obliquely. Or not. The important thing is not to
-    start spending that money until youre sure that you have it. One good thing is
-    that my husband is in grad school and will be done in 2019 and will then make
-    about 75Kyr with his degree profession. Be a bit careful about relying on this.
-    Outside the student loans, you should build other expenses around the assumption
-    that he wont find a job immediately after grad school. For example, we could be
-    in a recession in 2019. Well be about due by then. Paying off the 5k "other debt"
-    is probably a no brainer. Chances are that youre paying doubledigit interest.
-    Just kill it. Unless the car loan is zerointerest, you probably want to get rid
-    of that loan too. I would tend to agree that the car seems expensive for your
-    income, but Im not sure that the amount that you could recover by selling it justifies
-    the loss of value. Hopefully its in good shape and will last for years without
-    significant maintenance. Consider putting 2k your monthly income in your checking
-    account. Instead of paying for things paychecktopaycheck, this should allow you
-    to buy things on schedule, without having to wait for the money to appear in your
-    account. Put the remainder into an emergency account. Set aside 12k 50 of your
-    annual incomeexpenses for real emergencies like a medical emergency or job loss.
-    The other 16k you can use the same way you use the 5k other debt borrowing now,
-    for small emergencies. E.g. a car repair. Make a budget and stick to it. The elimination
-    of the car loan should free up enough monthly income to support a reasonable budget.
-    If it seems like it isnt, then you are spending too much money for your income.
-    Dont forget to explicitly budget for entertainment and vacations. Its easy to
-    overspend there. If you dont make a budget, youll just find yourself back to your
-    paychecktopaycheck existence. That sounds like it is frustrating for you. Budget
-    so that you know how much money you really need to live.
-  - They all basically mean the same thing  a type of debt than can be exchanged for
-    converted into equity at some point. Its only the mechanics that can be different.
-    A convertible bond is structured just like a regular bond  it usually pays periodic
-    interest and has a face value thats due at maturity. The difference is that the
-    bond holder has the option to exchange the debt for equity at some point during
-    the life of the bond. There can be restrictions on when that conversion is possible,
-    and they typically define a quantity of equity number of shares that the bond
-    can be converted into. If the market price of the shares goes above a price that
-    would make the shares more valuable than the bond, its in the best interest of
-    the bond holder to convert. A convertible note is typically used to describe a
-    kind of startup financing that does not pay interest or have a face value thats
-    redeemed, but instead is redeemed for equity as part of a later financing round.
-    Rather than specifying a specific number of shares, the bond holder receives equity
-    at a certain discount to the rest of the market. So they both are debt instruments
-    that can turn into equity investments, just through different mechanisms. A debenture
-    is a fancy word for unsecured debt, and convertible debt could be used to described
-    either structure above, so those terms could mean either type of structure.
-- source_sentence: What prevents interest rates from rising?
+  - If the person gifting the property owed any debt to Canada Revenue Agency on the
+    date of gift, you may getting a nice letter from Canada Revenue Agency advising
+    you to settle the donors tax liability with the property gifted.
+  - Simple math 502525, hence decline from 50 to 25 is a 50 decline you lose half,
+    while an advance from 25 to 50 is 100 gain you gain 100, double your 25 to 50.
+    Their point is that if you have more upswings than downswings  youll gain more
+    on long positions during upswings than on short positions during downswings on
+    average. Again  simple math.
+  - My gut is to say that any time there seems to be easy money to be made, the opportunity
+    would fade as everyone jumped on it. Let me ask you  why do you think these stocks
+    are priced to yield 79? The DVY yields 3.41 as of Aug 30,12. The high yielding
+    stocks you discovered may very well be hidden gems. Or they may need to reduce
+    their dividends and subsequently drop in price. No, its not safe. If the stocks
+    you choose drop by 20, youd lose 40 of your money, if you made the purchase on
+    50 margin. Theres risk with any stock purchase, one can claim no stock is safe.
+    Either way, your proposal juices the effect to creating twice the risk. Edit  After
+    the conversation with Victor, let me add these thoughts. The "RiskFree" rate is
+    generally defined to be the 1yr tbill and of course the risk of Gov default is
+    not zero. Theres the SP 500 index which has a beta of 1 and is generally viewed
+    as a decent index for comparison. You propose to use margin, so your risk, if
+    done with an SP index is twice that of the 1X SP investor. However, you wont buy
+    SP but stocks with such a high yield I question their safety. You dont mention
+    the stocks, so I cant quantify my answer, but its tbill, SP, 2X SP, then you.
+- source_sentence: For a car, would you pay cash, finance for 0.9 or lease for 0.9?
   sentences:
-  - Of course you can accept gold as payment. Would anyone pay in gold? Would it have
-    tax consequences on your federal taxes? These additional questions are offtopic
-    on this site about personal finance.
-  - Interest rates are market driven. They tend to be based on the prime rate set
-    by the federal reserve bank because of the tremendous lending capacity of that
-    institution and that other loan originators will often fund their own lending
-    at least in part with fed loans. However, there is no mandatory link between the
-    federal reserve rate and the market rate. No law stipulates that rates cannot
-    rise or fall. They will rise and fall as lenders see necessary to use their capital.
-    Though a lender asking 10 interest might make no loans when others are willing
-    to lend for 9. The only protection you have is that we are mostly economically
-    free. As a borrower, you are protected by the fact that there are many lenders.
-    Likewise, as a lender, because there are many borrowers. Stability is simply by
-    virtue of the fact that one market participant with inordinate pricing will find
-    fewer counterparties to transact.
-  - From The CocaCola Company website, section for Investors Stock History, Issues
-    Year 1919 Original issue  600,000 shares 100,000 preferred, par 100 each 500,000
-    common, without nominal or par value 1926 Eliminated 100,000 preferred in November.
-    This means there were preferred shares issued in 1919. However, all preferred
-    shares were "eliminated" not sure what that means as of 1926. There has been no
-    subsequent reissuance of preferred shares of CocaCola since then. I think the
-    company is still authorized to issue them, should they choose to do so in the
-    future.
-- source_sentence: Better to rent condo to daughter or put her on title?
+  - Given that we live in a world rife with geopolitical risks such as Brexit and
+    potential EU breakup, would you say its advisable to keep some of cash savings
+    in a foreign currency? Probably not. Primarily because you dont know what will
+    happen in the fallout of these sorts of political shifts. You dont know what will
+    happen to banking treaties between the various countries involved. If you can
+    manage to place funds on deposit in a foreign bankcountry in a currency other
+    than your home currency and maintain the deposit insurance in that country and
+    not spend too much exchanging your currency then there probably isnt a downside
+    other than liquidity loss. If youre thinking Ill just wire some whatever currency
+    to some bank in some foreign country in which you have no residency or citizenship
+    consideration without considering deposit insurance just so you might protect
+    some of your money from a possible future event I think you should stay away.
+  - You could write a personal check after the final price has been set and youre
+    ready to purchase. Another option would be to get the final price  then walk over
+    to your bank and get a cashiers check.
+  - This is actually quite a complicated issue. I suggest you talk to a properly licensed
+    tax adviser EACPA licensed in your State. Legal advice from an attorney licensed
+    in your State is also highly recommended. There are many issues at hand here.
+    Income  both types of entities are passthrough, so "earnings" are taxed the same.
+    However, for SCorp theres a "reasonable compensation" requirement, so while B
+    and C dont do any "work" they may be required to draw salary as executivesdirectors
+    if they act as such. Equity  for SCorp you cannot have different classes of shares,
+    all are the same. So you cannot have 2 partners contribute money and third to
+    contribute nothing work is compensated, youll be getting salary and all three
+    have the same stake in the company. You can have that with an LLC. Expansion  SCorp
+    is limited to X shareholders, all of which have to be Americans. Once you get
+    a foreign partner, or more than 100 partners  you automatically become CCorp whether
+    you want it or not. Investors  it would be very hard for you to find external
+    investors if youre a LLC. There are many more things to consider. Do not make
+    this decision lightly. Fixing things is usually much more expensive than doing
+    them right at the first place.
+- source_sentence: How much do large sell orders affect stock price?
   sentences:
-  - Credit cards and debit cards make up the bulk of the transactions in the US. Visa
-    and Mastercard take a percentage of each credit card transaction. For the most
-    part, this fee it built into the price of what you buy. That is, you dont generally
-    pay extra at the grocery store if you use a credit card gasoline purchases are
-    a notable exception here. If you were getting something like 2 of a third of all
-    the retail transactions in the US, youd probably not want to rock the boat too
-    much either. Since there is little fraud relative to the amount of money they
-    are taking in, and it can often be detected using statistical analysis, they dont
-    really stand to gain that much by reducing it through these methods. Sure they
-    can reduce the losses on the insurance they provide to the credit card consumer
-    but they risk slowing down the money machine. These companies want avoid doing
-    something like reducing fraud by 0.5 revenues but causing purchases with the cards
-    drop by 1. More security will be implemented as we can see with the slow introduction
-    of chip cards in the US but only at a pace that will prevent disruption of the
-    money machine. EMV will likely cause a large drop in CC fraud at brickandmortar
-    stores but wont stop it online. You will likely see some sort of system like you
-    describe rolled out for that eventually.
-  - I stumbled on the same discrepancy, and was puzzled by a significant difference
-    between the two prices on ETR and FRA. For example, today is Sunday, and google
-    shows the following closing prices for DAI. FRADAI ETRDAI So it looks like there
-    are indeed two different exchanges trading at different prices. Now, the important
-    value here, is the last column Volume. According to Wikipedia, the trading on
-    Frankfort Stock Exchange is done today exclusively via Xetra platform, thus the
-    volume on ETRDAI is much more important than on FRADAI. Obviously, they Wikipedia
-    is not 100 accurate, i.e. not all trading is done electronically via Xetra. According
-    to their webpage, Frankfort exchange has a Specialist Trading on Frankfurt Floor
-    service which has slightly different trading hours. I suspect what Google and
-    Yahoo show as Frankfort exchange is this manual trading via a Specialist opposed
-    to Xetra electronic trading. To answer your question, the stock youre having is
-    exactly the same, meaning if you bought an ETRBMW you can still sell it on FRA
-    by calling a FRA Trading Floor Specialist which will probably cost you a fee.
-    On the other hand, for the portfolio valuation and performance assessments you
-    should only use ETRBMW prices, because it is way more liquid, and thus better
-    reflect the current market valuation.
-  - Obviously you have done well financially in order to be able to purchase a condo
-    for cash, presumably, without risk of your other obligations. To put things in
-    perspective, we are probably talking about less than 5,000 in tax savings. If
-    she is on the title then she is a coowner. Are you okay with that? You would essentially
-    be giving this child a 50 stake in a property without compensation. Will your
-    other children be okay with it? As your question stated you would prefer to not
-    have her as an owner. However, is it better to not have her as an owner, So I
-    would buy the condo without her on the title and just pay the extra 100 per month
-    in property tax. It is probably "small potatoes" in comparison to your net worth.
-    I would also only charge her at most your cost of carrying the property as rent.
-    While you will create income all of it and probably more could be written off
-    as costs. There should be no income tax burden created from this situation. Your
-    accountant can help with any paperwork that needs to be filed.
-- source_sentence: If earning as freelancer, is it better to be a Sole Trader or Limited
-    Company?
+  - Travellers cheques. Thats exactly what they were intended for. Their usage has
+    dropped a lot since everyone can use ATMs in foreign countries, but they still
+    exist.
+  - I suggest taking a look at your pay stub or pay statement. Your employer should
+    provide you with one for each time you get paid. This shows your gross income
+    pay period and year to date or YTD for short and all stuff that gets deducted
+    and how your actual payment is calculated. In my case there are nine things that
+    get taken off Other things that might show up there are various life or accident
+    insurances, Child Care flexible spending account, legal  pet insurances, long
+    term disability, etc. Some of those are under your control through benefit election
+    or contribution choices, others you just have to live with. Still, its worth spending
+    the time to look at it occasionally.
+  - Essentially, what youre describing is a leveraged investment. As others noted,
+    the question is how confident you can be that a the returns on the investment
+    will exceed what youre paying in interest, and b that if you lose the bet youll
+    still be able to pay off the loan without severely injuring yourself. I did essentially
+    this when I bought my house, taking out a larger loan than necessary and leaving
+    more money in my investments, which had been returning more than the mortgages
+    interest rate. I then got indecently lucky during the recession and was able to
+    refinance down to under 4, which I am very certain my investment will beat. I
+    actually considered lengthening the term of the loan for that reason, or borrowing
+    a bit more, but decided not to double down on the bet that was my own riskcomfort
+    threshold. Know exactly what your risks are, including secondary effects of these
+    risks. Run the numbers to see what the likely return is. Decide whether you like
+    the odds enough to go for it.
+- source_sentence: How to determine how much to charge your business for rent in your
+    house?
   sentences:
-  - I answered a similar question before. Essentially, you shouldnt trust a site you
-    find on the Internet merely because it looks professional and real. Before signing
-    up with any new service provider you found online, you should verify the authenticity
-    of both the organization itself and their web site address. Even if the name displayed
-    by a web site represents a legitimate brokerage firm, any site you happen to come
-    across on the Internet could be an elaborate spoof of a real company, intended
-    to capture your personal details or worse. First, to check if a brokerage firm
-    is in fact registered to trade securities  in the United States  you can consult
-    FINRAs BrokerCheck online service. This might be the first of many checks you
-    should undertake ... after you convince yourself that FINRA is legitimate. A metaproblem  Then,
-    if you want to know if the web site address is authentic, one way is to contact
-    that broker offline using the contact information found from a trusted source,
-    such as the FINRA BrokerCheck details. Unfortunately, those details do not currently
-    appear to contain the brokers web site URL. Else, that could be useful. Another
-    thing to look at is the sites login or signup page, for a valid SSL certificate
-    that is both issued to the correct legal name of the brokerage firm as well as
-    has been signed by a wellknown certificate authority e.g. VeriSign. For a financial
-    services firm of any kind, you should look for and expect to see an Extended Validation
-    Certificate. Any other kind of certificate might only assert that the certificate
-    was issued to the domainname owner, and not necessarily to an organization with
-    the registered legal name. Yes, anybody can register a domain with a similar name
-    and then acquire a basic SSL certificate for that domain. FWIW, Scottrade and
-    ShareBuilder are both legitimate brokers I was aware already of each, but I also
-    just checked in the FINRA tool, and the URLs currently linked to by the question
-    are legitimate web site addresses for each. Also, you can see their EV certificates
-    in action on secured pages here and here. As to whether your investments with
-    those brokers would be "safe" in the event of the broker failing e.g. goes bankrupt,
-    youll want to know that they are members of the Securities Investor Protection
-    Corporation Wikipedia. Of course, this kind of protection doesnt protect you if
-    your investments simply go down in value. But do your own due diligence  always.
-  - Make sure you shop around and ask a lot of places for a good faith estimate. Last
-    I knew, the good faith document is the same everywhere and long form that makes
-    it easy enough to compare the hard numbers from place to place. I have gotten
-    several estimates for various scenarios and I have had them hand written and printed.
-    I discounted the hand written ones because that broker seemed pretty disorganized
-    in general Learn the terms online, and start comparing. Use the good faiths as
-    a negotiation tool to get lower rates or lower costs from other brokers. See how
-    accurate the person is at listening to you and filling out the paperwork. See
-    how responsive they are to you when you call with questions and want some changes.
-    Check with at least four places. The more places you shop, the better idea you
-    will have of what fees are high and what interest rates are low. I might pay a
-    higher fee to get a lower interest rate, so there are lots of trade offs to consider.
-  - Probably the biggest driver of the increased volumes that day was a change in
-    sentiment towards the healthcare sector as a whole that caused many healthcare
-    companies to experience higher volumes  httpswww.bloomberg.compressreleases20170711assetacquisitionsaccelerateinhealthcaresectorboostingpotentialrevenuegrowth
-    . Following any spike, not just sentiment related spikes, the market tends to
-    bounce back to about where it had been previously as analysts at the investment
-    banks start to see the stocks as being overbought or oversold. This is because
-    the effect of a spike on underlying ratios such as the Sharpe ratio or the PE
-    ratio makes the stock look less attractive to buyers and more attractive to sellers,
-    including short sellers. Note, however, that the price is broadly still a little
-    higher than it was before the spike as a result of this change in sentiment. Looking
-    at the price trends on Bloomberg httpswww.bloomberg.comquoteCDNAUS the price had
-    been steadily falling for the year prior to the spike but was levelling out at
-    just over 1 in the few months immediately prior to the spike. The increased interest
-    in the sector and the stock likely added to a general change in the direction
-    of the price trend and caused traders as opposed to investors to believe that
-    there was a change in the price trend. This will have lead to them trading the
-    stock more heavily intraday exacerbating the spike. Note that there traders will
-    include HFT bots as well as human traders. You question the legality of this volume
-    increase but the simple answer is that we may never know if it was the target
-    of traders manipulating the price or a case of insider trading. What we can see
-    is that taking "animal spirits" into account without any evidence of illegality
-    there are plenty of potential reasons why the spike may have occurred. Spikes
-    are common where traders perceive a change in a trend as they rush to cash in
-    on the change before other traders can and then sell out quickly when they realise
-    that the price is fundamentally out of sync with the firms underlying position.
-    You yourself say that you have been watching the stock for some time and, by that
-    fact alone, it is likely that others are for the same reasons that you are. Otherwise
-    you wouldnt be looking at it. Where people are looking at a stock expecting it
-    to take off or drop you expect volatility and volatility means spikes!
-- source_sentence: Is accidental death covered in term insurance without a rider?
+  - DCA is not 10day over 10 days. If I read the objective correctly, Id suggest about
+    a 5 year plan. Its difficult to avoid the issue of market timing. And any observation
+    Id make about the relative valuation of the market would be opinion. By this I
+    mean, some are saying that PE10 which Nobel prize winner Robert Schiller made
+    well known, if not popular, shows we are pretty high. Others are suggesting the
+    current PE is appropriate given the near zero rate of borrowing. Your income puts
+    long term gains at zero under current tax code. Short term are at your marginal
+    rate. I would caution not to let the tax tail wag the investing dog. The fellow
+    that makes too many buysell decisions based on his taxes is likely to lag he who
+    followed his overall allocation goals.
+  - The VAT number should be equivalent from the point of view of your client. The
+    fact that you are a sole trader and not a limited liability doesnt matter when
+    it comes down to pay VAT. They should pay the VAT to you and you will pay it to
+    the government. Ill guess that their issue is with tax breaks, it is a bit more
+    tricky to receive a tax break on paid taxes if you buy something abroad at least
+    it is here in Finland. If they wont pay you because of that, you could open a
+    LTD or contract the services of a management company which will do the job of
+    invoicing, receiving the money and passing it back to you, for a fee.
+  - If you are talking about a home office, you dont "charge" the business anything.
+    If the area is used exclusively as an office you prorate by square footage just
+    the actual expenses. TurboTax recent published an article "Can I Take the Home
+    Office Deduction?" which is a must read if you dont understand the process. Note
+    I authored said article.
+- source_sentence: Why do credit cards have minimum limits?
   sentences:
-  - A Section 1256 contract is any Nonequity options include debt options, commodity
-    futures options, currency options, and broadbased stock index options. A broadbased
-    stock index is based upon the value of a group of diversified stocks or securities
-    such as the Standard and Poors 500 index. 60 of the capital gain or loss from
-    Section 1256 Contracts is deemed to be longterm capital gain or loss and 40 is
-    deemed to be shortterm capital gain or loss. What this means is a more favorable
-    tax treatment of 60 of your gains. httpwww.tradelogsoftware.comtaxtopicsfutures
-    Its a really wierd rule arbitraty 60 designation, so broad, etc, but section 1256
-    contracts get preferential tax treatment and thats what Buffetts talking about.
-  - This is assuming that you are now making some amount X per month which is more
-    than the income you used to have as a student. Otherwise, the question seems rather
-    moot. All figures should be net amounts after taxes. First, figure out what the
-    difference in your cost of living is. That is, housing, electricity, utilities,
-    the basics that you need to have to have a place in which to live. Im not considering
-    food costs here unless they were subsidized while you were studying. Basically,
-    you want to figure out how much you now have to spend extra per month for basic
-    sustenance. Then, figure out how much more you are now making, compared to when
-    you were a student. Subtract the sustenance extra from this to get your net pay
-    increase. After that is when it gets trickier. Basically, you want to set aside
-    or invest as much of the pay increase as possible, but you probably have other
-    expenses now that you didnt before and which you cannot really do that much about.
-    This mights be particular types of clothes, commute fares car keepup, gas, bus
-    pass, ..., or something entirely different. Anyway, decide on a savings goal,
-    as a percentage of your net pay increase compared to when you were a student.
-    This might be 5, 10 or if you are really ambitious 50 or more. Whichever number
-    you pick, make sure its reasonable giving your living expenses, and keep in mind
-    that anything is better than nothing. Find a financial institution that offers
-    a highinterest savings account, preferably one with free withdrawals, and sign
-    up for one. Each and every time you get paid, figure out how much to save based
-    on the percentage you determined if your regular case is that you get the same
-    payment each time, you can simply set up an automated bank transfer, put that
-    in the savings account and, for the moment, forget about that money. Try your
-    best to live only on the remainder, but if you realize that you set aside too
-    much, dont be afraid to tap into the savings account. Adjust your future deposits
-    accordingly and try to find a good balance. At the end of each month, deposit
-    whatever remains in your regular account into your savings account, and if that
-    is a sizable amount of money, consider raising your savings goal a little. The
-    ultimate goal should be that you dont need to tap into your savings except for
-    truly exceptional situations, but still keep enough money outside of the savings
-    account to cater to some of your wants. Yes, bank interest rates these days are
-    often pretty dismal, and you will probably be lucky to find a savings account
-    that especially after taxes will even keep up with inflation. But to start with,
-    what you should be focusing on is not to make money in terms of real value appreciation,
-    but simply figuring out how much money you really need to sustain a working life
-    for yourself and then walking that walk. Eventually this may take anywhere from
-    a couple of months to a year or more, you should have settled pretty well on an
-    amount that you feel comfortable with setting aside each month and just letting
-    be. By that time, you should have a decently sized nest egg already, which will
-    help you get over rough spots, and can start thinking about other forms of investing
-    some of what you are setting aside. Whenever you get a net pay raise of any kind
-    gross pay raise, lower taxes, bonus, whichever, increase your savings goal by
-    a portion of that raise. Maybe give yourself 60 of the raise and bank the remaining
-    40. That way, you are hopefully! always increasing the amount of money that you
-    are setting aside, while also reaping some benefits right away. One major upside
-    of this approach is that, if you lose your job, not only will you have that nest
-    egg, you will also be used to living on less. So you will have more money in the
-    bank and less monthly expenses, which puts you in a significantly better position
-    than if you had only one of those, let alone neither.
-  - Term insurance typically covers accidental death as a part of the base policy.
-    However, the coverage amount may be limited. Opting for a separate Accidental
-    Death Benefit Rider can provide additional financial protection in case of accidental
-    death.
+  - The first method is the correct one. You bought an asset worth of 1000 and you
+    put it on your depreciation schedule. What it means is that you get to write off
+    the 1000 over a certain period of time and not at once, as you do with expenses.
+    But the value youre writing off is the 1000 regardless of how much youve written
+    off already. Assume you depreciate in straight line over 5 years thats how you
+    depreciate computers for Federal tax purposes, most states follow. For the simplicity
+    of the calculation, assume you depreciate each year as a whole year no midyearmidquarter
+    conventions. The calculation is like this If you sell the computer  the proceeds
+    above the adjusted basis amount are taxed as depreciation recapture up to the
+    accumulated depreciation amount, and as capital gains above that. So in your case  book
+    value is the adjusted basis at the end of the year EOY, depreciation this year
+    is the amount you depreciate in the year in question out of the total of the original
+    cost, and the accumulated depreciation is the total depreciation including the
+    current year. In Maryland they do not allow depreciating to 0, but rather down
+    to 25 of the original cost, so if you bought a 1000 computer  you depreciate until
+    your adjusted basis is 250. Depreciation rates are described here page 5. For
+    computers except for large mainframes you get 30 depreciation, with the last year
+    probably a bit less due to the 250 adjusted basis limitation.
+  - They have a minimum to discourage applications for that particular card. Every
+    application costs them money because they have to pay the credit agencies to pull
+    the applicants credit history. So one way they save money and reduce their cost
+    of business is to discourage people from applying if theyre not creditworthy enough
+    for that product. Credit card companies tailor their products into different incomecredit
+    brackets. Those who have less creditworthiness would be better suited for a different
+    product than what youre referring, similar to those with greater creditworthiness.
+  - What was the true reason they wanted to use my accounts for? We wouldnt know the
+    true reason. The scammer can do multiple things. What exactly he would do in your
+    case ... I am very eager to know what a person was up to who would give to me
+    so much information about themselves. I know some of you will jump on the chance
+    to yell "it was not their true address", but.... it is where they wanted me to
+    send the cards to. And I was to give proof of my identification ie a copy of my
+    drivers license, my articles of incorporation and the real estate development
+    project prospectus. Also they were only willing to work with certain banks ie
+    Citibank, Bank of America etc. I can not understand what they were doing wanting
+    such access to accounts that had no money in them save the amount I used to open
+    them with. It looks more like they would open accounts under your name, but they
+    would be controlling the accounts. i.e. what goes in and out. i.e. they would
+    be able to deposit and withdraw from a new account they setup. They would want
+    to use this account for illegal activities, so that if caught, the account opening
+    paper trail leads to you. Even if they gave you an address, it could be rental.
+    Like they have copies of your Company registration and ID proofs, they can use
+    these to get another rental property ... and then send letters to some and ask
+    them to met there.
 pipeline_tag: sentence-similarity
 library_name: sentence-transformers
 ---
@@ -332,9 +218,9 @@ from sentence_transformers import SentenceTransformer
 model = SentenceTransformer("sentence_transformers_model_id")
 # Run inference
 sentences = [
-    'Is accidental death covered in term insurance without a rider?',
-    'Term insurance typically covers accidental death as a part of the base policy. However, the coverage amount may be limited. Opting for a separate Accidental Death Benefit Rider can provide additional financial protection in case of accidental death.',
-    'A Section 1256 contract is any Nonequity options include debt options, commodity futures options, currency options, and broadbased stock index options. A broadbased stock index is based upon the value of a group of diversified stocks or securities such as the Standard and Poors 500 index. 60 of the capital gain or loss from Section 1256 Contracts is deemed to be longterm capital gain or loss and 40 is deemed to be shortterm capital gain or loss. What this means is a more favorable tax treatment of 60 of your gains. httpwww.tradelogsoftware.comtaxtopicsfutures Its a really wierd rule arbitraty 60 designation, so broad, etc, but section 1256 contracts get preferential tax treatment and thats what Buffetts talking about.',
+    'Why do credit cards have minimum limits?',
+    'They have a minimum to discourage applications for that particular card. Every application costs them money because they have to pay the credit agencies to pull the applicants credit history. So one way they save money and reduce their cost of business is to discourage people from applying if theyre not creditworthy enough for that product. Credit card companies tailor their products into different incomecredit brackets. Those who have less creditworthiness would be better suited for a different product than what youre referring, similar to those with greater creditworthiness.',
+    'The first method is the correct one. You bought an asset worth of 1000 and you put it on your depreciation schedule. What it means is that you get to write off the 1000 over a certain period of time and not at once, as you do with expenses. But the value youre writing off is the 1000 regardless of how much youve written off already. Assume you depreciate in straight line over 5 years thats how you depreciate computers for Federal tax purposes, most states follow. For the simplicity of the calculation, assume you depreciate each year as a whole year no midyearmidquarter conventions. The calculation is like this If you sell the computer  the proceeds above the adjusted basis amount are taxed as depreciation recapture up to the accumulated depreciation amount, and as capital gains above that. So in your case  book value is the adjusted basis at the end of the year EOY, depreciation this year is the amount you depreciate in the year in question out of the total of the original cost, and the accumulated depreciation is the total depreciation including the current year. In Maryland they do not allow depreciating to 0, but rather down to 25 of the original cost, so if you bought a 1000 computer  you depreciate until your adjusted basis is 250. Depreciation rates are described here page 5. For computers except for large mainframes you get 30 depreciation, with the last year probably a bit less due to the 250 adjusted basis limitation.',
 ]
 embeddings = model.encode(sentences)
 print(embeddings.shape)
@@ -388,19 +274,19 @@ You can finetune this model on your own dataset.
 
 #### Unnamed Dataset
 
-* Size: 5,164 training samples
+* Size: 4,197 training samples
 * Columns: <code>sentence_0</code>, <code>sentence_1</code>, and <code>label</code>
 * Approximate statistics based on the first 1000 samples:
-  |         | sentence_0                                                                        | sentence_1                                                                          | label                                                         |
-  |:--------|:----------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|:--------------------------------------------------------------|
-  | type    | string                                                                            | string                                                                              | float                                                         |
-  | details | <ul><li>min: 4 tokens</li><li>mean: 15.12 tokens</li><li>max: 44 tokens</li></ul> | <ul><li>min: 6 tokens</li><li>mean: 164.22 tokens</li><li>max: 256 tokens</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.5</li><li>max: 1.0</li></ul> |
+  |         | sentence_0                                                                        | sentence_1                                                                          | label                                                          |
+  |:--------|:----------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|:---------------------------------------------------------------|
+  | type    | string                                                                            | string                                                                              | float                                                          |
+  | details | <ul><li>min: 4 tokens</li><li>mean: 15.15 tokens</li><li>max: 35 tokens</li></ul> | <ul><li>min: 4 tokens</li><li>mean: 163.51 tokens</li><li>max: 256 tokens</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.52</li><li>max: 1.0</li></ul> |
 * Samples:
-  | sentence_0                                                                                | sentence_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | label            |
-  |:------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
-  | <code>The BenefitsDisadvantages of using a credit card</code>                             | <code>A cautionary tale About 25 years ago I decided that I should try my hand at investing in some technology companies. I was in the computer biz but decided that I might suffer from myopia there, so I researched some medical startups. And I did some reasonably good research, given the available resources the Internet was quite primitive. I narrowed things down to 45 companies, studying their technology plans, then researched their business plans and their personnel. In the end I picked a drug company. Not only did it have a promising business plan, but it had as its CEO a hotshot from some other company, and the BOD was populated buy big names from tech companies and the like. AND the company had like 2 of cash for every 1 of outstanding share value, following their recent IPO. So I sold a bit of stock I had in my employer and bought like 3000 worth of this company. Then, taking the advice Id seen several places, I forgot about it for about 6 months. When I went back to look their stock v...</code> | <code>0.0</code> |
-  | <code>Received a call to collect on a 17 year old, charged off debt. What do I do?</code> | <code>There are statutes of limitations on how long they can wait before coming after you. 14 years certainly exceeds it, which I believe means you are not legally required to pay. statutes of limitations by state The most likely scenario is that this is a scam. Second most likely is that this is a collections agency trying to trick you into paying even though they dont have legal authority to force you. In that case if you do pay them anything, then the statute of limitations restarts and they can legally start giving you trouble, so definitely dont do that. If they keep harassing you, you can probably take legal action against them. Thats the worst case scenario, though. Id just ignore them. At this point, if they are legally entitled to any money, which I highly doubt, they will need to take you to court. They are not going to do that over 1000. Blocking their number might be a reasonable idea. I would doubt whether they can even do anything to your credit rating over this issue. If you a...</code> | <code>1.0</code> |
-  | <code>Paid cash for a car, but dealer wants to change price</code>                        | <code>I had a similar situation when I was in college. The difference was that the dealer agreed to finance and the bank they used wanted a higher interest rate from me because of my limited credit history. The dealer asked for a rate 5 percentage points higher than what they put on the paperwork. I told them that I would not pay that and I dropped the car off at the lot with a letter rescinding the sale. They werent happy about that and eventually offered me financing at my original rate with a 1000 discount from the previously agreedupon purchase price. What I learned through that experience is that I didnt do a goodenough job of negotiating the original price. I would suggest that your son stop answering phone calls from the dealership for at least 1 week and drive the car as much as possible in that time. If the dealer has cashed the check then that will be the end of it. He owes nothing further. If the dealer has not cashed the check, he should ask whether they prefer to keep the check ...</code> | <code>1.0</code> |
+  | sentence_0                                                                                                  | sentence_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | label            |
+  |:------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
+  | <code>How do I protect myself from a scam if I want to help a relative?</code>                              | <code>I thought it was such a useful suggestion that I went ahead and created them. Im sure youre not the only one who could derive some benefit from them, I know I will. httpwww.investy.comtools When I have some additional time, I will add the option for graceperiods, but for now I wanted to get them up so you could use the calculations asis from the article. Enjoy. Disclosure Im the founder of the site they are hosted on and I wrote the code for the calculators</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | <code>0.0</code> |
+  | <code>Teaching school kids about money  what are the real life examples of math, budgeting, finance?</code> | <code>I am a numbers guy, the math is great. Instead of "jane was twice her sons age when he married, and is now 1.5 times his age....." questions in math class, I think the math problems should mostly have dollarpound signs in front of them. In general, I like the idea of relating to the kids situations as much as possible. When my daughter 14 makes a purchase, Id ask her to be aware of how many hours she had to work to make the money she plans to spend. Was it worth 4 hours babysitting to buy an iPad case? Was it worth 2 to buy lunch that we could have made you at home? Note, the convert price to hours worked is a concept that works great when teaching budgeting to anyone, not just kids. The math of tax and discounts for comparison shopping works great as well so long as they understand value. A 400 sweatshirt at 50 off isnt really a bargain, in my opinion. Next, the math of balancing a checkbook should be high on the list. Accounting for the checks that didnt clear but are outstanding is ...</code> | <code>1.0</code> |
+  | <code>Is there any kind of unsecured stock loan?</code>                                                     | <code>That is absolute rubbish. Warren Buffet follows simple value and GARP tenants that literally anyone could follow if they had the discipline to do so. I have never once heard of an investment made by Warren Buffet that wasnt rooted in fundamentals and easy to understand. The concept is fairly simple as is the math, buying great companies trading at discounts to what they are worth due to market fluctuations, emotionality, or overreactions to key sectors etc. If I buy ABC corp at 10 knowing it is worth 20, it could go down or trade sideways for FIVE YEARS doing seemingly nothing and then one day catch up with its worth due to any number of factors. In that case, my 100 return which took five years to actualize accounts for an average 20 return per year. Also and this should be obvious, but diversification is a double edged sword. Every year, hundreds of stocks individually beat the market return. Owning any one of these stocks as your only holding would mean that YOU beat the market. As ...</code> | <code>0.0</code> |
 * Loss: [<code>CosineSimilarityLoss</code>](https://sbert.net/docs/package_reference/sentence_transformer/losses.html#cosinesimilarityloss) with these parameters:
   ```json
   {
@@ -539,7 +425,7 @@ You can finetune this model on your own dataset.
 ### Training Logs
 | Epoch  | Step | Training Loss |
 |:------:|:----:|:-------------:|
-| 1.5480 | 500  | 0.0964        |
+| 1.9011 | 500  | 0.0944        |
 
 
 ### Framework Versions
