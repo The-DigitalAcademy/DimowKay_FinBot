@@ -1,0 +1,12 @@
+{
+    "model_name": "Llama-3.2",
+    "train_file": "train_data.jsonl",
+    "validation_file": "validation_data.jsonl",
+    "output_dir": "output_model",
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 5e-5,
+    "logging_steps": 100,
+    "save_steps": 500
+  }
+  
