@@ -29,7 +29,7 @@ if st.button("Get Answer"):
 
 
     if "message" in response and "content" in response["message"]:
-        st.write("**FinBot's AI Response:**")
+        st.write("**Answer**")
         st.markdown(response["message"]["content"].replace("\n", "  \n"))
     else:
         st.write("**Error:** Unexpected response format. Please check the Ollama API output.")
