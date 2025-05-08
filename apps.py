@@ -15,20 +15,20 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11434")
 embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url='http://127.0.0.1:11434')
 
-# File and vector store paths
+
 data_path = "train_data.csv"
 vector_store_path = "vector_store"  
 
-# Load and prepare data
+
 data = pd.read_csv(data_path).head(100)
 data['content'] = data['answer']
 text = " ".join(data['content'].values)
 
-# Split text into chunks
+
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=512, chunk_overlap=128)
 chunks = text_splitter.split_text(text)
 
-# Initialize or load vector store
+
 if not os.path.exists(vector_store_path):
     vector_store = Chroma.from_texts(chunks, embed_model)
     vector_store.persist(vector_store_path)
@@ -51,7 +51,7 @@ if user_input:
     if any(greet in user_input.lower() for greet in ["hi", "hello", "hey"]):
         st.markdown("Hello! How can I help you with your finance-related question today?")
     else:
-        # Create strict instruction template for domain control
+        
         template = (
             "You are a finance-only assistant. "
             "Only use the context provided. "
