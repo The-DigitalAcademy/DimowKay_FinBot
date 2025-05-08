@@ -17,7 +17,7 @@ embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url='http
 
 # File and vector store paths
 data_path = "train_data.csv"
-vector_store_path = "vector_store"  # Same directory as script and data
+vector_store_path = "vector_store"  
 
 # Load and prepare data
 data = pd.read_csv(data_path).head(100)
