@@ -50,14 +50,14 @@ combine_docs_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
 # In-memory recent query tracker
 recent_questions = {}
 
-# LLM-based classifier
+# LLM-based classifier — now returns full response
 def is_finance_related(query):
     classification_prompt = (
         f"Is the following question financially related? "
         f"Just answer YES or NO. Question: {query}"
     )
     response = llm.invoke(classification_prompt).strip().upper()
-    return "YES" in response
+    return response
 
 # Prompt builder
 def build_finance_prompt(context, question, repeat_count):
@@ -86,7 +86,7 @@ User question: {question}
 Answer:""", temperature
 
 # Streamlit UI
-st.title("💰 Finance QA Bot")
+st.title("Fin$mart Chatbot")
 prompt = st.chat_input("Ask a finance-related question")
 
 if prompt:
@@ -94,12 +94,14 @@ if prompt:
     count = recent_questions.get(normalized_query, 0) + 1
     recent_questions[normalized_query] = count
 
-    if not is_finance_related(prompt):
-        st.markdown("I'm specialized in finance and can't help with that. Please ask a finance-related question.")
-    else:
+    classification = is_finance_related(prompt)
+
+    if "YES" in classification:
         relevant_docs = retriever.get_relevant_documents(prompt)
         context = "\n".join([doc.page_content for doc in relevant_docs])
 
         full_prompt, temperature = build_finance_prompt(context, prompt, count)
         response = llm.invoke(full_prompt)
         st.markdown(response)
+    else:
+        st.markdown("I'm specialized in finance and can't help with that. Please ask a finance-related question.")
