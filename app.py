@@ -6,6 +6,43 @@ import uuid
 import json
 from datetime import datetime
 
+import streamlit as st
+import os
+import pandas as pd
+import pickle
+from dotenv import load_dotenv
+from langchain_community.llms import Ollama
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain.chains import create_retrieval_chain
+from langchain import hub
+from langchain.chains.combine_documents import create_stuff_documents_chain
+
+# Set API Key (if applicable)
+load_dotenv()
+
+# Initialize Ollama LLM and embedding model
+llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11434")
+embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url='http://127.0.0.1:11434')
+
+# Load pre-vectorized data from `vector.pkl`
+vector_store_path = "/Users/tshmacm1171/Desktop/DimowKay_FinBot/vector_store.pkl"
+
+if os.path.exists(vector_store_path):
+    with open(vector_store_path, "rb") as f:
+        vector_store = pickle.load(f)
+    print("Loaded pre-vectorized data successfully.")
+else:
+    raise FileNotFoundError(f" Vector file {vector_store_path} not found! Ensure you have run the vectorizing step and saved it.")
+
+# Create retriever
+retriever = vector_store.as_retriever()
+retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
+
+combine_docs_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
+retrieval_chain = create_retrieval_chain(retriever, combine_docs_chain)
+
+
 # --- DB CONNECTION ---
 def get_connection():
     return psycopg2.connect(
@@ -183,9 +220,9 @@ elif st.session_state.page == "register":
 # --- CHAT PAGE ---
 elif st.session_state.page == "chat":
     # Top layout
-    col1, col2 = st.columns([8, 1])
+    col1, col2 = st.columns([7, 2])
     with col1:
-        st.markdown("## 🤖 FINSMART")
+        st.markdown("## FINSMART")
         st.markdown("#### Your Personal Financial Advisor")
     with col2:
         if st.button(f"👤 {st.session_state.name}", key="profile_button"):
@@ -230,7 +267,7 @@ elif st.session_state.page == "chat":
     if st.session_state.selected_history_id and not st.session_state.clear_view:
         qa = get_chat_by_history_id(st.session_state.selected_history_id)
         if qa:
-            st.markdown(f"### 🗓️ Chat from {qa['created_at']}")
+            st.markdown(f"###  Chat from {qa['created_at']}")
             with st.chat_message("user"):
                 st.markdown(qa["question"])
             with st.chat_message("assistant"):
@@ -241,7 +278,7 @@ elif st.session_state.page == "chat":
     # Suggested questions
     suggested = get_suggested_questions()
     if suggested:
-        st.markdown("### 💡 Suggested Questions:")
+        st.markdown("###  Suggested Questions:")
         cols = st.columns(5)
         for i, (q, a) in enumerate(suggested):
             if cols[i].button(q):
@@ -249,59 +286,26 @@ elif st.session_state.page == "chat":
                 st.rerun()
 
     # Input box for user questions
-    user_q = st.chat_input("Type your question...")
+    user_q = st.chat_input("Ask me anything related to finance...")
+
+    def validate_financial_answer(answer):
+        validation_prompt = (
+            "You are a highly knowledgeable AI assistant specializing strictly in finance.\n"
+            "Is the following answer financially related?\n"
+            "Answer: " + answer + "\n"
+            "Only answer with 'Yes' or 'No'."
+        )
+        check_response = llm.generate([validation_prompt])
+        return "yes" in check_response.generations[0][0].text.lower()
+    
     if user_q:
-        bot_a = "FinBot is thinking... (replace this with real logic)"
-        save_message(st.session_state.user_id, user_q, bot_a)
-        st.rerun()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if any(greet in user_q.lower() for greet in ["hi", "hello", "hey"]):
+            st.markdown("Hello! How can I help you with your finance-related question today?")
+        else:
+            bot_a = retrieval_chain.invoke({"input": user_q})["answer"]
+            if validate_financial_answer(bot_a):
+                st.markdown(bot_a)
+            else:
+                st.markdown("I'm specialized in finance and can't help with that. How can I assist you with a finance-related question today?")
+            save_message(st.session_state.user_id, user_q, bot_a)
+            st.rerun()
