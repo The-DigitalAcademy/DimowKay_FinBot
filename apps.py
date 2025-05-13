@@ -1,33 +1,33 @@
 import streamlit as st
 import os
 import pandas as pd
+import pickle
 from dotenv import load_dotenv
 from langchain_community.llms import Ollama
 from langchain_community.embeddings import OllamaEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain.chains import create_retrieval_chain
 from langchain import hub
 from langchain.chains.combine_documents import create_stuff_documents_chain
 
+# Set API Key (if applicable)
+load_dotenv()
+
 # Initialize Ollama LLM and embedding model
 llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11434")
 embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url='http://127.0.0.1:11434')
 
-# Load Data
-data_path = "train_data.csv"
-data1 = pd.read_csv(data_path)
-data1 = data1[0:100]
-data1['content'] = data1['answer']
+# Load pre-vectorized data from `vector.pkl`
+vector_store_path = "/Users/tshmacm1171/Desktop/DimowKay_FinBot/vector_store.pkl"
 
-text1 = " ".join(data1['content'].values)
+if os.path.exists(vector_store_path):
+    with open(vector_store_path, "rb") as f:
+        vector_store = pickle.load(f)
+    print("Loaded pre-vectorized data successfully.")
+else:
+    raise FileNotFoundError(f" Vector file {vector_store_path} not found! Ensure you have run the vectorizing step and saved it.")
 
-# Split Text
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=512, chunk_overlap=128)
-chunks = text_splitter.split_text(text1)
-
-# Vector Store
-vector_store = Chroma.from_texts(chunks, embed_model)
+# Create retriever
 retriever = vector_store.as_retriever()
 retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
 
