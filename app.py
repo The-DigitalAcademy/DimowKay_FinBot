@@ -222,7 +222,8 @@ elif st.session_state.page == "chat":
     # Top layout
     col1, col2 = st.columns([7, 2])
     with col1:
-        st.markdown("## FINSMART")
+        logo_path = "/Users/tshmacm1171/Desktop/DimowKay_FinBot/logo.jpg"
+        logo = st.image(logo_path, width=290)
         st.markdown("#### Your Personal Financial Advisor")
     with col2:
         if st.button(f"👤 {st.session_state.name}", key="profile_button"):
