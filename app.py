@@ -120,6 +120,15 @@ def login_user(email, password):
             return user_id, name, surname
     return None, None, None
 
+def update_user_profile(user_id, new_name, new_surname):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("UPDATE users SET name=%s, surname=%s WHERE user_id=%s", (new_name, new_surname, user_id))
+    conn.commit()
+    cur.close()
+    conn.close()
+
+
 def get_chat_sessions(user_id):
     conn = get_connection()
     cur = conn.cursor()
@@ -133,6 +142,14 @@ def get_chat_sessions(user_id):
     cur.close()
     conn.close()
     return sessions
+
+def delete_chat_session(history_id):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("DELETE FROM chat_history WHERE history_id=%s", (history_id,))
+    conn.commit()
+    cur.close()
+    conn.close()
 
 def get_chat_by_history_id(history_id):
     conn = get_connection()
@@ -229,7 +246,13 @@ elif st.session_state.page == "chat":
         if st.button(f"👤 {st.session_state.name}", key="profile_button"):
             st.session_state.show_profile = not st.session_state.show_profile
         if st.session_state.show_profile:
-            st.markdown(f"**Name:** {st.session_state.name} {st.session_state.surname}")
+            new_name = st.text_input("Edit Name", value=st.session_state.name)
+            new_surname = st.text_input("Edit Surname", value=st.session_state.surname)
+            if st.button("Update Profile"):
+                update_user_profile(st.session_state.user_id, new_name, new_surname)
+                st.session_state.name, st.session_state.surname = new_name, new_surname
+                st.success("Profile updated successfully!")
+
             st.markdown(f"**Email:** {st.session_state.email}")
 
     # Sidebar with fixed layout
