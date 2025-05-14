@@ -210,7 +210,7 @@ elif st.session_state.page == "register":
                 st.error("Email already exists.")
         else:
             st.error("Passwords don’t match.")
-    if st.button("Back to Login"):
+    if st.button("Login"):
         st.session_state.page = "login"
 
 # --- CHAT PAGE ---
