@@ -1,0 +1,11 @@
+streamlit
+psycopg2-binary
+bcrypt
+uuid
+json
+pandas
+python-dotenv
+ollama
+chromadb
+langchain
+langchain_community
