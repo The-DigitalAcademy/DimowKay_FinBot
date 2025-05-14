@@ -59,6 +59,16 @@
             "database": "dimowkay",
             "username": "postgres",
             "password": ""
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "finbot",
+            "database": "finbot",
+            "username": "postgres",
+            "password": ""
         }
     ]
 }

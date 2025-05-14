@@ -52,6 +52,9 @@ if user_input:
     if any(greet in user_input.lower() for greet in ["hi", "hello", "hey"]):
         st.markdown("Hello! How can I help you with your finance-related question today?")
     else:
+        template = """Please answer me using only the context I provided. if i ask you anything not in context, just say you don't know.""" + user_input
+    # formatted_prompt = template.format(question=prompt)  
+        response = retrieval_chain.invoke({"input": user_input})
         response = retrieval_chain.invoke({"input": user_input})["answer"]
         if validate_financial_answer(response):
             st.markdown(response)

@@ -231,7 +231,7 @@ elif st.session_state.page == "register":
                 st.error("Email already exists.")
         else:
             st.error("Passwords don't match.")
-    if st.button("Back to Login"):
+    if st.button("Login"):
         st.session_state.page = "login"
 
 # --- CHAT PAGE ---
@@ -291,7 +291,7 @@ elif st.session_state.page == "chat":
     if st.session_state.selected_history_id and not st.session_state.clear_view:
         qa = get_chat_by_history_id(st.session_state.selected_history_id)
         if qa:
-            st.markdown(f"###  Chat from {qa['created_at']}")
+            st.markdown(f"### Chat from {qa['created_at']}")
             with st.chat_message("user"):
                 st.markdown(qa["question"])
             with st.chat_message("assistant"):
@@ -302,8 +302,8 @@ elif st.session_state.page == "chat":
     # Suggested questions
     suggested = get_suggested_questions()
     if suggested:
-        st.markdown("###  Suggested Questions:")
-        cols = st.columns(5)
+        st.markdown("### Suggested Questions:")
+        cols = st.columns(min(len(suggested), 5))  # Ensures flexibility
         for i, (q, a) in enumerate(suggested):
             if cols[i].button(q):
                 save_message(st.session_state.user_id, q, a)
@@ -323,13 +323,19 @@ elif st.session_state.page == "chat":
         return "yes" in check_response.generations[0][0].text.lower()
     
     if user_q:
-        if any(greet in user_q.lower() for greet in ["hi", "hello", "hey"]):
+    # Greeting detection optimization
+        if user_q.lower().startswith(("hi", "hello", "hey")):
             st.markdown("Hello! How can I help you with your finance-related question today?")
         else:
-            bot_a = retrieval_chain.invoke({"input": user_q})["answer"]
-            if validate_financial_answer(bot_a):
-                st.markdown(bot_a)
+            context = "You are a finance expert chatbot. Answer only finance-related queries."
+            user_prompt = f"{context}\nUser Question: {user_q}"
+            
+            bot_response = retrieval_chain.invoke({"input": user_prompt})["answer"]
+            
+            if validate_financial_answer(bot_response):
+                st.markdown(bot_response)
             else:
-                st.markdown("I'm specialized in finance and can't help with that. How can I assist you with a finance-related question today?")
-            save_message(st.session_state.user_id, user_q, bot_a)
+                st.markdown("I'm specialized in finance and can't help with that. Feel free to ask a finance-related question!")
+
+            save_message(st.session_state.user_id, user_q, bot_response)
             st.rerun()
