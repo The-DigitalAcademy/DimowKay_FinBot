@@ -9,3 +9,4 @@ ollama
 chromadb
 langchain
 langchain_community
+psycopg2
