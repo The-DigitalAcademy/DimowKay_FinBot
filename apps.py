@@ -1,80 +1,74 @@
 import streamlit as st
-import os
+import numpy as np
 import pandas as pd
-from dotenv import load_dotenv
-from langchain_community.llms import Ollama
-from langchain_community.embeddings import OllamaEmbeddings
+from annoy import AnnoyIndex
+from langchain.embeddings import OllamaEmbeddings
+from langchain.chains import ConversationalRetrievalChain
+from langchain.llms import Ollama
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
-from langchain.chains import create_retrieval_chain
-from langchain import hub
-from langchain.chains.combine_documents import create_stuff_documents_chain
 
-# Load environment variables if needed
-load_dotenv()
-
-# Initialize Ollama LLM and embedding model
+# Initialize Ollama model for embeddings and LLM
+embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11434")
 llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11434")
-embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url='http://127.0.0.1:11434')
 
-# Load and preprocess data
+# Load the financial Q&A data
 data_path = "/Users/tshmacm1172/Desktop/DimowKay_FinBot/data/train_data.csv"
-vector_store_path = "vector_store"
+data = pd.read_csv(data_path).head(100)  # Use top 100 rows for demo
 
-data = pd.read_csv(data_path).head(100)
+# Combine questions and answers into a single text column
 data['content'] = data['answer']
 text = " ".join(data['content'].values)
 
-# Split text into chunks
+# Split the data into chunks
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=512, chunk_overlap=128)
 chunks = text_splitter.split_text(text)
 
-# Create or load vector store
-if not os.path.exists(vector_store_path):
-    vector_store = Chroma.from_texts(chunks, embed_model)
-    vector_store.persist(vector_store_path)
-else:
-    vector_store = Chroma(persist_directory=vector_store_path, embedding_function=embed_model)
+# Generate embeddings for each chunk
+embeddings = embed_model.embed_documents(chunks)
 
-# Create retriever and QA chain
-retriever = vector_store.as_retriever()
-retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
-combine_docs_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
-retrieval_chain = create_retrieval_chain(retriever, combine_docs_chain)
+# Initialize Annoy Index (dense vector search)
+dimension = len(embeddings[0])  # Assuming all embeddings are the same length
+index = AnnoyIndex(dimension, 'angular')  # You can choose other distances like 'euclidean', 'manhattan', etc.
 
-# Streamlit interface
-st.title("Fin$mart Chat")
-user_input = st.chat_input("Ask me anything related to finance...")
+# Add vectors to the index
+for i, embedding in enumerate(embeddings):
+    index.add_item(i, embedding)
 
-if user_input:
-    # Step 1: Handle greetings
-    if any(greet in user_input.lower() for greet in ["hi", "hello", "hey"]):
-        st.markdown("Hello! How can I help you with your finance-related question today?")
-    else:
-        # Step 2: Check if the question is finance-related using the LLM
-        topic_check_prompt = (
-            "You are an assistant that checks if a question is about finance. "
-            "Answer only with 'Yes' or 'No'.\n\n"
-            f"Question: {user_input}\nIs this a finance-related question?"
-        )
-        is_finance = llm.invoke(topic_check_prompt).strip().lower()
+# Build the index
+index.build(10)  # You can set the number of trees (higher value = better accuracy)
 
-        if is_finance != "yes":
-            st.markdown("I'm specialized in finance and can't help with that.")
-        else:
-            # Step 3: Check vector store for related documents
-            docs = retriever.invoke(user_input)
+# Save the Annoy index to disk
+index.save("annoy_index.ann")
 
-            if not docs:
-                st.markdown("I couldn’t find relevant info in the database. Let me generate a new answer...")
-                # Generate new answer using general financial knowledge
-                fallback_prompt = (
-                    "You are a finance-only assistant. Respond to the following finance-related question using your financial expertise:\n\n"
-                    f"Question: {user_input}\nAnswer:"
-                )
-                generated_answer = llm.invoke(fallback_prompt)
-                st.markdown(generated_answer)
-            else:
-                # Retrieve context-based answer
-                response = retrieval_chain.invoke({"input": user_input})
-                st.markdown(response["answer"])
+# Load the Annoy index from disk
+index_loaded = AnnoyIndex(dimension, 'angular')
+index_loaded.load("annoy_index.ann")
+
+# Define the search function
+def search_annoy(query, top_k=3):
+    query_embedding = embed_model.embed_documents([query])[0]
+    return index_loaded.get_nns_by_vector(query_embedding, top_k)
+
+# Setup the conversation retrieval chain
+qa_chain = ConversationalRetrievalChain.from_llm(llm, search_annoy)
+
+# Function to interact with the bot
+def ask_finance_bot(user_query):
+    response = qa_chain.run(input=user_query)
+    return response
+
+# Streamlit App Interface
+st.title("Financial QA Chatbot")
+st.write("Ask any financial question, and I will assist you based on the knowledge I have.")
+
+# User input for question
+user_query = st.text_input("Enter your financial question:")
+
+if user_query:
+    answer = ask_finance_bot(user_query)
+    st.write(f"**Answer:** {answer}")
+
+# Optional: Allow user to see the chunks being used for context (for debugging)
+if st.checkbox('Show context used for answer'):
+    st.write("### Context Used:")
+    st.write(chunks[:3])  # Show the first 3 chunks for reference
