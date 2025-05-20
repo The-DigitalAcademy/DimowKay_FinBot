@@ -47,7 +47,7 @@ def create_tables():
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
-    CREATE TABLE IF NOT EXISTS users (
+    CREATE TABLE IF NOT EXISTS fin_users (
         user_id UUID PRIMARY KEY,
         name TEXT,
         surname TEXT,
@@ -57,7 +57,7 @@ def create_tables():
     );
     CREATE TABLE IF NOT EXISTS chat_history (
         history_id SERIAL PRIMARY KEY,
-        user_id UUID REFERENCES users(user_id),
+        user_id UUID REFERENCES fin_users(user_id),
         qa_pair JSONB NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
@@ -72,7 +72,7 @@ def register_user(name, surname, email, password):
     cur = conn.cursor()
     hashed_pw = hash_password(password).decode()
     try:
-        cur.execute("INSERT INTO users (user_id, name, surname, email, password) VALUES (%s, %s, %s, %s, %s)",
+        cur.execute("INSERT INTO fin_users (user_id, name, surname, email, password) VALUES (%s, %s, %s, %s, %s)",
                     (user_id, name, surname, email, hashed_pw))
         conn.commit()
         return True
@@ -85,7 +85,7 @@ def register_user(name, surname, email, password):
 def login_user(email, password):
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("SELECT user_id, password, name, surname FROM users WHERE email=%s", (email,))
+    cur.execute("SELECT user_id, password, name, surname FROM fin_users WHERE email=%s", (email,))
     result = cur.fetchone()
     cur.close()
     conn.close()
@@ -98,7 +98,7 @@ def login_user(email, password):
 def update_user_profile(user_id, new_name, new_surname):
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("UPDATE users SET name=%s, surname=%s WHERE user_id=%s", (new_name, new_surname, user_id))
+    cur.execute("UPDATE fin_users SET name=%s, surname=%s WHERE user_id=%s", (new_name, new_surname, user_id))
     conn.commit()
     cur.close()
     conn.close()

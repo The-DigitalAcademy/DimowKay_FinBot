@@ -3,10 +3,10 @@ import psycopg2
 # --- PostgreSQL DB connection ---
 def get_connection():
     return psycopg2.connect(
-        host="localhost",         
-        database="finbot",     
-        user="postgres",          
-        password="none"  
+        host="129.232.211.166",         
+        database="events",     
+        user="dylan",          
+        password="super123duper"  
     )
 
 # --- Financial questions and answers ---
