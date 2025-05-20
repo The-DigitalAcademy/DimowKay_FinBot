@@ -8,3 +8,4 @@ ollama  # Ensure compatibility with Python 3.12
 chromadb  # Ensure compatibility with Python 3.12
 langchain  # Ensure compatibility with Python 3.12
 langchain_community  # Ensure compatibility with Python 3.12
+faiss-cpu
