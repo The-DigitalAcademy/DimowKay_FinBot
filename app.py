@@ -35,7 +35,7 @@ retrieval_chain = create_retrieval_chain(retriever, combine_docs_chain)
 
 # --- DB HELPERS (unchanged) ---
 def get_connection():
-    return psycopg2.connect(host="localhost", database="finbot", user="postgres", password="none")
+    return psycopg2.connect(host="129.232.211.166", database="events", user="dylan", password="super123duper")
 
 def hash_password(password):
     return bcrypt.hashpw(password.encode(), bcrypt.gensalt())
