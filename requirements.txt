@@ -1,6 +1,7 @@
 streamlit==1.45.1
 psycopg2-binary==2.9.10
 bcrypt==4.3.0
+numpy==1.25.0
 pandas==1.5.3  # Specify version compatible with your setup
 python-dotenv==1.0.0  # Specify version if needed
 ollama  # Ensure compatibility with Python 3.12
