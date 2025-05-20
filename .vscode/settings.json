@@ -69,6 +69,16 @@
             "database": "finbot",
             "username": "postgres",
             "password": ""
+        },
+        {
+            "previewLimit": 50,
+            "server": "129.232.211.166",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "finsmart",
+            "username": "dylan",
+            "password": "super123duper",
+            "database": "events"
         }
     ]
 }
