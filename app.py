@@ -217,7 +217,8 @@ elif st.session_state.page == "register":
 elif st.session_state.page == "chat":
     col1, col2 = st.columns([7, 2])
     with col1:
-        st.image("logo.jpg", width=290)
+        logo_path = os.path.join(os.getcwd(), "logo.jpg")
+        st.image(logo_path, width=290)
         st.markdown("#### Your Personal Financial Advisor")
     with col2:
         if st.button(f"👤 {st.session_state.name}", key="profile_button"):
