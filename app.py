@@ -18,8 +18,8 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 
 # --- LLM + ENV SETUP ---
 load_dotenv()
-llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11434")
-embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url='http://127.0.0.1:11434')
+llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11435")
+embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11435")
 
 vector_store_path = "vector_store.pkl"
 if os.path.exists(vector_store_path):
