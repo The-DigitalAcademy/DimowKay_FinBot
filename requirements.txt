@@ -9,3 +9,4 @@ chromadb
 langchain 
 langchain_community
 faiss-cpu
+ngrok
