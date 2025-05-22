@@ -3,7 +3,6 @@ import streamlit as st
 import psycopg2
 import bcrypt
 import uuid
-import requests
 import json
 from datetime import datetime
 import os
@@ -19,9 +18,8 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 
 # --- LLM + ENV SETUP ---
 load_dotenv()
-llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="https://af67-41-193-198-106.ngrok-free.app")
-embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="https://af67-41-193-198-106.ngrok-free.app")
-
+llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://127.0.0.1:11434")
+embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url='http://127.0.0.1:11434')
 
 vector_store_path = "vector_store.pkl"
 if os.path.exists(vector_store_path):
