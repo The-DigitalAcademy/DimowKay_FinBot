@@ -20,7 +20,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 # --- LLM + ENV SETUP ---
 load_dotenv()
 llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="https://56aa-41-193-198-106.ngrok-free.app")
-embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="https://56aa-41-193-198-106.ngrok-free.app5")
+embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="https://56aa-41-193-198-106.ngrok-free.app")
 # llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="https://477b-41-193-198-106.ngrok-free.app ")
 # embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="https://477b-41-193-198-106.ngrok-free.app ")
 
