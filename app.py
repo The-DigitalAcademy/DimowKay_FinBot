@@ -19,8 +19,10 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 
 # --- LLM + ENV SETUP ---
 load_dotenv()
-llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="https://477b-41-193-198-106.ngrok-free.app ")
-embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="https://477b-41-193-198-106.ngrok-free.app ")
+llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="http://localhost:11435")
+embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="http://localhost:11435")
+# llm = Ollama(model="llama3.2:1b-instruct-q8_0", base_url="https://477b-41-193-198-106.ngrok-free.app ")
+# embed_model = OllamaEmbeddings(model="llama3.2:1b-instruct-q8_0", base_url="https://477b-41-193-198-106.ngrok-free.app ")
 
 vector_store_path = "vector_store.pkl"
 if os.path.exists(vector_store_path):
