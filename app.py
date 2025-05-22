@@ -7,6 +7,7 @@ import json
 from datetime import datetime
 import os
 import pickle
+import requests
 import pandas as pd
 from dotenv import load_dotenv
 from langchain_community.llms import Ollama
